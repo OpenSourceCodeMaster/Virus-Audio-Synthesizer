@@ -1,0 +1,62 @@
+================================================================================
+   🥋 OPEN SOURCE MASTER'S SACRED COMPILATION SCROLL (instructions.txt) 🥋
+================================================================================
+
+"I am the Open Source Master, single file .exes scare me."
+
+That is why you will NOT find a pre-compiled .exe in this repository. Instead,
+you are going to forge the binary with your own hands from pure, readable C++
+source code—so you know 100% what is running behind your screen.
+
+(Also, I once broke a .exe file using only a computer mouse. Building it 
+yourself keeps it safe from my aggressive left-clicking.)
+
+--------------------------------------------------------------------------------
+⚠️ STEP 0: THE MASTER'S GOLDEN RULE
+--------------------------------------------------------------------------------
+Whether my account is hacked or not, ALWAYS READ THE SOURCE CODE BEFORE YOU
+COMPILE OR RUN IT. Never trust a mystery binary—not even from the Open Source
+Master.
+
+Also: LOWER YOUR VOLUME BEFORE CLICKING "PREVIEW LOOP". This is a bytebeat 
+"virus audio" synthesizer. Your speakers have been warned.
+
+--------------------------------------------------------------------------------
+🛠️ OPTION 1: COMPILE WITH VISUAL STUDIO (RECOMMENDED / GUI WAY)
+--------------------------------------------------------------------------------
+You do not need to manually configure linker settings—all required Windows audio
+and Media Foundation libraries are already linked via #pragma comment in the code.
+
+1. Download and install Visual Studio (Community Edition is free).
+   - During installation, check the workload: 
+     "Desktop development with C++"
+2. Open Visual Studio and click "Create a new project".
+3. Search for and select "Empty Project" (C++ / Windows) and click Next.
+4. Name your project (e.g., VirusAudioSynth) and click Create.
+5. In the Solution Explorer (right panel), right-click "Source Files" -> 
+   Add -> New Item -> C++ File (.cpp).
+6. Paste the entire C++ source code from this repository into that .cpp file.
+7. At the top toolbar, switch "Debug" to "Release" (optional, for cleaner builds).
+8. Press Ctrl + Shift + B to build, or F5 to compile and launch!
+
+--------------------------------------------------------------------------------
+💻 OPTION 2: COMPILE VIA COMMAND LINE (THE DOJO TERMINAL WAY)
+--------------------------------------------------------------------------------
+If you already have Visual Studio or the MSVC Build Tools installed:
+
+1. Open the "Developer Command Prompt for VS" from your Windows Start Menu.
+2. Navigate to the folder containing your .cpp file (e.g., main.cpp).
+3. Run the following command:
+
+   cl /EHsc /O2 /DUNICODE /D_UNICODE main.cpp user32.lib gdi32.lib
+
+4. Run the freshly forged VirusAudioSynth / main.exe—and keep your mouse steady.
+
+--------------------------------------------------------------------------------
+📜 SYSTEM REQUIREMENTS
+--------------------------------------------------------------------------------
+- Operating System: Windows (uses native Win32 GUI & Windows Media Foundation)
+- Compiler: MSVC (Visual Studio) recommended. (MinGW/g++ users will need to 
+  manually pass -lwinmm -lcomctl32 -lcomdlg32 -lmfplat -lmfreadwrite -lmfuuid 
+  and -municode flags).
+================================================================================
